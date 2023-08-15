@@ -9,6 +9,7 @@ connectToMongo();
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('dist'));
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/attendance', require('./routes/attend'));
