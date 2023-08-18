@@ -110,7 +110,7 @@ router.post('/login', login_validation, async (req,res) => {
 })
 
 // ROUTE:3 - Get login details of user. method POST. Login required. endpoint: api/auth/getuser
-router.post('/getuser', fetchUser, async (req,res) => {
+router.get('/getuser', fetchUser, async (req,res) => {
     try {
         const userId = req.user.id;
         const user = await User.findById(userId).select("-password");
